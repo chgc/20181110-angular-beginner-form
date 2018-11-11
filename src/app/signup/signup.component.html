@@ -1,5 +1,8 @@
 <h1>註冊畫面</h1>
 {{ f.value | json }} {{ f.invalid }}
+<button (click)="f.reset({ personName: 'Kevin', email: '' })">
+  reset form
+</button>
 <form #f="ngForm">
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">姓名</label>
