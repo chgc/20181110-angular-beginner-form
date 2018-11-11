@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class SignupComponent implements OnInit {
   @ViewChild('f') form;
   cityTownAreaSource;
+  cityOptions = [];
+  townOptions = [];
 
   constructor(private http: HttpClient) {}
 
@@ -20,8 +22,16 @@ export class SignupComponent implements OnInit {
     this.http.get('/assets/data/cityarea.json').subscribe(data => {
       console.log(data);
       this.cityTownAreaSource = data;
+      this.cityOptions = Object.keys(this.cityTownAreaSource);
     });
   }
+
+  getTownOption(city) {
+    console.log(city);
+    this.townOptions = this.cityTownAreaSource[city];
+    console.log(this.townOptions);
+  }
+
   submitForm(f) {
     // 使用 ViewChild 取得 Form 實體
     // console.log(this.form);
