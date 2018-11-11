@@ -6,6 +6,13 @@ import {
   Validators
 } from '@angular/forms';
 
+function ConfirmEmailCheck(group) {
+  if (group.get('email').value !== group.get('confirmEmail').value) {
+    return { emailNotMatch: true };
+  }
+  return null;
+}
+
 @Component({
   selector: 'app-singup-advance',
   templateUrl: './singup-advance.component.html',
@@ -20,8 +27,13 @@ export class SingupAdvanceComponent implements OnInit {
 
   formData = this.fb.group({
     name: ['', [Validators.required]],
-    email: '',
-    confirmEmail: [{ value: '', disabled: true }]
+    emailGroup: this.fb.group(
+      {
+        email: '',
+        confirmEmail: [{ value: '', disabled: false }]
+      },
+      { validator: [ConfirmEmailCheck] }
+    )
   });
 
   constructor(private fb: FormBuilder) {}
