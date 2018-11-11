@@ -1,5 +1,7 @@
 <h1>註冊畫面</h1>
 {{ f.value | json }} {{ f.invalid }}
+<hr />
+{{ f.form.getRawValue() | json }}
 <button (click)="f.reset({ personName: 'Kevin', email: '' })">
   reset form
 </button>
@@ -35,6 +37,7 @@
         class="form-control"
         placeholder="Email (必填)"
         required
+        disabled
       />
     </div>
   </div>
