@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  FormBuilder,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-singup-advance',
@@ -8,7 +13,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 })
 export class SingupAdvanceComponent implements OnInit {
   formData = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
     email: new FormControl(''),
     confirmEmail: new FormControl({ value: '', disabled: true })
   });
