@@ -7,6 +7,12 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
   styleUrls: ['./singup-advance.component.css']
 })
 export class SingupAdvanceComponent implements OnInit {
+  formData = new FormGroup({
+    name: new FormControl(),
+    email: new FormControl(),
+    confirmEmail: new FormControl()
+  });
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {}
