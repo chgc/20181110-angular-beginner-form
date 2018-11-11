@@ -8,9 +8,9 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 })
 export class SingupAdvanceComponent implements OnInit {
   formData = new FormGroup({
-    name: new FormControl(),
-    email: new FormControl(),
-    confirmEmail: new FormControl()
+    name: new FormControl(''),
+    email: new FormControl(''),
+    confirmEmail: new FormControl({ value: '', disabled: true })
   });
 
   constructor(private fb: FormBuilder) {}
