@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignupComponent implements OnInit {
   @ViewChild('f') form;
+  city = '';
   cityTownAreaSource;
   cityOptions = [];
   townOptions = [];
@@ -26,9 +27,9 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  getTownOption(event) {
-    console.log(event);
-    this.townOptions = this.cityTownAreaSource[event.target.value];
+  getTownOption(city) {
+    console.log(city);
+    this.townOptions = this.cityTownAreaSource[city];
     console.log(this.townOptions);
   }
 

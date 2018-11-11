@@ -106,10 +106,9 @@
             <select
               id="inputState"
               class="form-control"
-              ngModel
+              [ngModel]="city"
               name="city"
-              #city="ngModel"
-              (change)="getTownOption($event)"
+              (ngModelChange)="getTownOption($event)"
             >
               <option selected>請選擇縣市</option>
               <option *ngFor="let city of cityOptions">{{ city }}</option>
