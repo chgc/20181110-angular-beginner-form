@@ -115,9 +115,17 @@
             </select>
           </div>
           <div class="col">
-            <select id="inputState" class="form-control">
+            <select
+              id="inputState"
+              class="form-control"
+              name="town"
+              [ngModel]="town"
+              (ngModelChange)="getZipcodeOptions($event)"
+            >
               <option selected>請選擇區域</option>
-              <option>...</option>
+              <option *ngFor="let townZip of townOptions" [ngValue]="townZip">{{
+                townZip[0]
+              }}</option>
             </select>
           </div>
           <div class="col">

@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class SignupComponent implements OnInit {
   @ViewChild('f') form;
   city = '';
+  town;
   cityTownAreaSource;
   cityOptions = [];
   townOptions = [];
@@ -29,8 +30,11 @@ export class SignupComponent implements OnInit {
 
   getTownOption(city) {
     console.log(city);
-    this.townOptions = this.cityTownAreaSource[city];
-    console.log(this.townOptions);
+    this.townOptions = Object.entries(this.cityTownAreaSource[city]);
+  }
+
+  getZipcodeOptions(townZipcode) {
+    console.log(townZipcode);
   }
 
   submitForm(f) {
