@@ -109,7 +109,7 @@
               ngModel
               name="city"
               #city="ngModel"
-              (change)="getTownOption(city.value)"
+              (change)="getTownOption($event)"
             >
               <option selected>請選擇縣市</option>
               <option *ngFor="let city of cityOptions">{{ city }}</option>

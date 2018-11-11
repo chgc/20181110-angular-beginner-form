@@ -26,9 +26,9 @@ export class SignupComponent implements OnInit {
     });
   }
 
-  getTownOption(city) {
-    console.log(city);
-    this.townOptions = this.cityTownAreaSource[city];
+  getTownOption(event) {
+    console.log(event);
+    this.townOptions = this.cityTownAreaSource[event.target.value];
     console.log(this.townOptions);
   }
 
