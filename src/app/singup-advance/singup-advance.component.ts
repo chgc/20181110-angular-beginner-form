@@ -26,5 +26,10 @@ export class SingupAdvanceComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // 可能使用情境
+    // this.http.get('productApi/1').subscribe(productInfo=>{
+    //   this.fb.group(productInfo);
+    // })
+  }
 }
