@@ -12,10 +12,16 @@ import {
   styleUrls: ['./singup-advance.component.css']
 })
 export class SingupAdvanceComponent implements OnInit {
-  formData = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl(''),
-    confirmEmail: new FormControl({ value: '', disabled: true })
+  // formData = new FormGroup({
+  //   name: new FormControl('', [Validators.required]),
+  //   email: new FormControl(''),
+  //   confirmEmail: new FormControl({ value: '', disabled: true })
+  // });
+
+  formData = this.fb.group({
+    name: ['', [Validators.required]],
+    email: '',
+    confirmEmail: [{ value: '', disabled: true }]
   });
 
   constructor(private fb: FormBuilder) {}
